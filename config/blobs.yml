@@ -1,1 +1,6 @@
---- {}
+berkeleydb/db-5.3.28.tar.gz:
+  size: 35090431
+  sha: fa3f8a41ad5101f43d08bc0efb6241c9b6fc1ae9
+openldap/openldap-2.4.44.tgz:
+  size: 5658830
+  sha: 016a738d050a68d388602a74b5e991035cdba149
