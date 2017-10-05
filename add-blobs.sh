@@ -4,7 +4,7 @@ DIR=`pwd`
 
 mkdir -p .downloads
 
-pushd .downloads
+cd .downloads
 
 
 
@@ -18,4 +18,4 @@ if [ ! -f ${DIR}/blobs/openldap/openldap-2.4.44.tgz ];then
     bosh add-blob --dir=${DIR} openldap-2.4.44.tgz openldap/openldap-2.4.44.tgz
 fi
 
-popd
+cd -
