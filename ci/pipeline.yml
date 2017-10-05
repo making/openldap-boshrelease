@@ -102,7 +102,7 @@ jobs:
           TARBALL=openldap-boshrelease-${VERSION}.tgz
 
           bosh add-blob ../compiled/berkeleydb/db-5.3.28.tar.gz berkeleydb/db-5.3.28.tar.gz
-          bosh add-blob ../compiled/openldap/openldap-2.4.44.tgz openldap/openldap-2.4.44.tgz
+          bosh add-blob ../compiled/openldap/openldap-2.4.45.tgz openldap/openldap-2.4.45.tgz
           bosh create-release --force --version=${VERSION} --final --tarball=../releases/${TARBALL}
           
           SHA1=`sha1sum ../releases/${TARBALL} | awk '{print $1}'`
@@ -230,7 +230,7 @@ tasks:
         cd repo
         
         bosh add-blob ../compiled/berkeleydb/db-5.3.28.tar.gz berkeleydb/db-5.3.28.tar.gz
-        bosh add-blob ../compiled/openldap/openldap-2.4.44.tgz openldap/openldap-2.4.44.tgz
+        bosh add-blob ../compiled/openldap/openldap-2.4.45.tgz openldap/openldap-2.4.45.tgz
         rm -rf .final_builds releases
         bosh create-release --name=openldap-dev --force --timestamp-version --tarball=../releases/openldap-boshrelease.tgz
   bosh-deploy: &BOSH_DEPLOY
