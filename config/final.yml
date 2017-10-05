@@ -1,6 +1,6 @@
 ---
 blobstore:
-  provider: s3
+  provider: local
   options:
-    bucket_name: openldap-boshrelease
+    blobstore_path: /tmp/openldap
 final_name: openldap
