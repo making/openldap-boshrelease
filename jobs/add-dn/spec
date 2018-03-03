@@ -1,0 +1,36 @@
+---
+name: add-dn
+
+templates:
+  run.sh.erb: bin/run
+
+packages:
+- openldap
+
+properties:
+  ldap.olcRootDN:
+    description: ""
+  ldap.olcRootPW:
+    description: ""
+  ldap.configDatabasePW:
+    description: ""
+
+  ldap.configSchemaLdif:
+    description: "Add config records to ldap"
+    example:
+      dn: cn=schema,cn=config
+      changetype: modify
+      add: olcAttributeTypes
+      olcAttributeTypes: (
+        1.3.6.1.4.1.35015.1.2.4
+        NAME 'costCenter'
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+       )
+  ldap.userEntriesLdif:
+    description: "Add dn records to ldap"
+    example:
+      dn: ou=Users,dc=test,dc=com
+      changetype: add
+      objectClass: organizationalUnit
+      ou: Users
+
