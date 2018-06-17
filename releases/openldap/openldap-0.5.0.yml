@@ -1,0 +1,25 @@
+name: openldap
+version: 0.5.0
+commit_hash: "5547258"
+uncommitted_changes: true
+jobs:
+- name: ldap-server
+  version: 4b80342bd861cec9eeb2f49d5914024f7c2dd1ef
+  fingerprint: 4b80342bd861cec9eeb2f49d5914024f7c2dd1ef
+  sha1: b59c1d304baa85e1f84587e353a3c78e9e1c0dbe
+packages:
+- name: berkeleydb
+  version: cbd78953366de414b13776851fed78d4e23a6582
+  fingerprint: cbd78953366de414b13776851fed78d4e23a6582
+  sha1: c31f75f8693ad03285f7696bae7f3fd76d5d871f
+  dependencies: []
+- name: openldap
+  version: 42ea0feab6fe7e8ff2ef5a707c496f088d910f18
+  fingerprint: 42ea0feab6fe7e8ff2ef5a707c496f088d910f18
+  sha1: 2b0a7a2ec7316708a73f5cc068024d20c4b7a648
+  dependencies:
+  - berkeleydb
+license:
+  version: a15d2462e28d34ba5c0cf2d7f9b566ce05b532ea
+  fingerprint: a15d2462e28d34ba5c0cf2d7f9b566ce05b532ea
+  sha1: 2554e9bb3c29b9023929f4a2ebf4a2667f07f106
