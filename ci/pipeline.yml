@@ -26,7 +26,7 @@ jobs:
   plan:
   - aggregate:
     - get: repo
-      trigger: true
+      # trigger: true
   - task: download-blobs
     config:
       <<: *DOWNLOAD_BLOBS
@@ -100,9 +100,10 @@ jobs:
           rm -rf .final_builds releases
           VERSION=`cat ../repo-version/number`
           TARBALL=openldap-boshrelease-${VERSION}.tgz
+          
+          ln -s ../compiled ./.downloads
+          ./add-blobs.sh
 
-          bosh add-blob ../compiled/berkeleydb/db-5.3.28.tar.gz berkeleydb/db-5.3.28.tar.gz
-          bosh add-blob ../compiled/openldap/openldap-2.4.45.tgz openldap/openldap-2.4.45.tgz
           bosh create-release --force --version=${VERSION} --final --tarball=../releases/${TARBALL}
           
           SHA1=`sha1sum ../releases/${TARBALL} | awk '{print $1}'`
@@ -229,8 +230,8 @@ tasks:
         set -e
         cd repo
         
-        bosh add-blob ../compiled/berkeleydb/db-5.3.28.tar.gz berkeleydb/db-5.3.28.tar.gz
-        bosh add-blob ../compiled/openldap/openldap-2.4.45.tgz openldap/openldap-2.4.45.tgz
+        ln -s ../compiled ./.downloads
+        ./add-blobs.sh
         rm -rf .final_builds releases
         bosh create-release --name=openldap-dev --force --timestamp-version --tarball=../releases/openldap-boshrelease.tgz
   bosh-deploy: &BOSH_DEPLOY
