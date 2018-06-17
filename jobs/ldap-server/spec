@@ -12,6 +12,9 @@ templates:
   ca.crt.erb: config/certs/ca.crt
   server.key.erb: config/certs/server.key
   server.crt.erb: config/certs/server.crt
+provides:
+- name: ldap-server
+  type: ldap-server
 properties:
   ldap.reloadConfigOnRestart:
     description: "Should the config database be deleted and recreated on each deployment, this will destroy all configuration that was loaded during runtime"
