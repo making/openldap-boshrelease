@@ -6,10 +6,10 @@ export OPENLDAP=/var/vcap/packages/openldap
 export PATH=${OPENLDAP}/libexec:${OPENLDAP}/bin:$PATH
 
 CONFIG_ROOT_DN='cn=config'
-CONFIG_ROOT_PW=<%= p('ldap.configDatabasePW') %>
+CONFIG_ROOT_PW=<%= link("ldap-server").p("ldap.configDatabasePW") %>
 
-DB_ROOT_DN=<%= p('ldap.olcRootDN') %>
-DB_ROOT_PW=<%= p('ldap.olcRootPW') %>
+DB_ROOT_DN=<%= link("ldap-server").p("ldap.olcRootDN") %>
+DB_ROOT_PW=<%= link("ldap-server").p("ldap.olcRootPW") %>
 #/var/vcap/packages/openldap/bin/ldapadd -D "cn=config" -f /tmp/ldap.dif -w 'i65vryeny1n4scyworrb'
 #/var/vcap/packages/openldap/bin/ldapadd -D "cn=admin,dc=test,dc=com" -f /tmp/ldap_init.ldif -w 'password'
 

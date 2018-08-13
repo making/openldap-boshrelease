@@ -4,17 +4,14 @@ name: add-dn
 templates:
   run.sh.erb: bin/run
 
+consumes:
+- name: ldap-server
+  type: ldap-server
+
 packages:
 - openldap
 
 properties:
-  ldap.olcRootDN:
-    description: ""
-  ldap.olcRootPW:
-    description: ""
-  ldap.configDatabasePW:
-    description: ""
-
   ldap.configSchemaLdif:
     description: "Add config records to ldap"
     example:
