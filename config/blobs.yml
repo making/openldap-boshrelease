@@ -10,3 +10,72 @@ openldap/openldap-2.4.45.tgz:
 openldap/openldap-2.4.46.tgz:
   size: 5700204
   sha: a9ae2273eb9bdd70090dafe0d018a3132606bef6
+phpldapadmin/apache2-bin_2.4.18-2ubuntu3.8_amd64.deb:
+  size: 926042
+  sha: 12974a40077a85efb072837aa2cc85d7d6a21303
+phpldapadmin/apache2-data_2.4.18-2ubuntu3.8_all.deb:
+  size: 161886
+  sha: 8a0c569d97c71170e0b063aa9c0a7c8e6c017b99
+phpldapadmin/apache2-utils_2.4.18-2ubuntu3.8_amd64.deb:
+  size: 82002
+  sha: 19a155021c8e1263904c4840fbf70dd64467b57e
+phpldapadmin/apache2_2.4.18-2ubuntu3.8_amd64.deb:
+  size: 86832
+  sha: a7bf94ebef5a1a383589ccba60927a7f871395ed
+phpldapadmin/libapache2-mod-php_7.0+35ubuntu6_all.deb:
+  size: 2960
+  sha: 68739c15d8f6c3d259e1644d65fe3f0aa9df6c5c
+phpldapadmin/libapache2-mod-php7.0_7.0.30-0ubuntu0.16.04.1_amd64.deb:
+  size: 1224054
+  sha: 5484b1263c1b47bf322a2bd8e3f46dd3e1f24fce
+phpldapadmin/libapr1_1.5.2-3_amd64.deb:
+  size: 85958
+  sha: f6aa0302fd3b864e8176390c1216647a5568f0aa
+phpldapadmin/libaprutil1-dbd-sqlite3_1.5.4-1build1_amd64.deb:
+  size: 10594
+  sha: 8269bdaba5927274c8715543e3cbe6a8aa17ba8b
+phpldapadmin/libaprutil1-ldap_1.5.4-1build1_amd64.deb:
+  size: 8720
+  sha: 4356186af8ae30a76124f88d1d6ee48aae8bfb3b
+phpldapadmin/libaprutil1_1.5.4-1build1_amd64.deb:
+  size: 77084
+  sha: c0a66fbab47f0dacdb1feabacd2f67ef6f66f292
+phpldapadmin/liblua5.1-0_5.1.5-8ubuntu1_amd64.deb:
+  size: 102450
+  sha: a9be2a397ffb8cbb971b6bc7cc4f7fe9ef8fad7b
+phpldapadmin/php-common_35ubuntu6_all.deb:
+  size: 10774
+  sha: a6e807eff96de30f546318e88b95d67285771dd8
+phpldapadmin/php-ldap_7.0+35ubuntu6_all.deb:
+  size: 1936
+  sha: d651bce6d808e0a4e8c3090d28bd6d517cb5cd20
+phpldapadmin/php-xml_7.0+35ubuntu6_all.deb:
+  size: 1954
+  sha: 4110a5a081766804f154bc2ffa9292ea44f01d9a
+phpldapadmin/php7.0-cli_7.0.30-0ubuntu0.16.04.1_amd64.deb:
+  size: 1282136
+  sha: 34a4714d6578edd560a2c94dea58aaeca34d0220
+phpldapadmin/php7.0-common_7.0.30-0ubuntu0.16.04.1_amd64.deb:
+  size: 840344
+  sha: 862b11181c514a40b4debec3b5ad17b5890068a9
+phpldapadmin/php7.0-json_7.0.30-0ubuntu0.16.04.1_amd64.deb:
+  size: 16886
+  sha: 9eb9301d20985c85701e31b5810b6ffa65426f37
+phpldapadmin/php7.0-ldap_7.0.30-0ubuntu0.16.04.1_amd64.deb:
+  size: 21214
+  sha: 0394614a530c76085b17d772287bf363d658a9a4
+phpldapadmin/php7.0-opcache_7.0.30-0ubuntu0.16.04.1_amd64.deb:
+  size: 77182
+  sha: 3f93e31fef948820dac0bf1d30239165261976df
+phpldapadmin/php7.0-readline_7.0.30-0ubuntu0.16.04.1_amd64.deb:
+  size: 12814
+  sha: 1b1b39cb2f863fe3135ce51af566ffd43ce58927
+phpldapadmin/php7.0-xml_7.0.30-0ubuntu0.16.04.1_amd64.deb:
+  size: 113332
+  sha: 13724b22b14a522d29b91a3478cd1e7203cc8abf
+phpldapadmin/phpldapadmin_1.2.2-5.2ubuntu2.1_all.deb:
+  size: 726902
+  sha: 6b438a187dba3528269f4853035013ee79d18218
+phpldapadmin/ssl-cert_1.0.37_all.deb:
+  size: 16874
+  sha: 0fe153265742bd282ab937cb8e7346184026270c

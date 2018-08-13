@@ -1,0 +1,30 @@
+---
+name: phpldapadmin
+
+dependencies: []
+
+files:
+- phpldapadmin/apache2-bin_2.4.18-2ubuntu3.8_amd64.deb
+- phpldapadmin/apache2-data_2.4.18-2ubuntu3.8_all.deb
+- phpldapadmin/apache2-utils_2.4.18-2ubuntu3.8_amd64.deb
+- phpldapadmin/apache2_2.4.18-2ubuntu3.8_amd64.deb
+- phpldapadmin/libapache2-mod-php7.0_7.0.30-0ubuntu0.16.04.1_amd64.deb
+- phpldapadmin/libapache2-mod-php_7.0+35ubuntu6_all.deb
+- phpldapadmin/libapr1_1.5.2-3_amd64.deb
+- phpldapadmin/libaprutil1-dbd-sqlite3_1.5.4-1build1_amd64.deb
+- phpldapadmin/libaprutil1-ldap_1.5.4-1build1_amd64.deb
+- phpldapadmin/libaprutil1_1.5.4-1build1_amd64.deb
+- phpldapadmin/liblua5.1-0_5.1.5-8ubuntu1_amd64.deb
+- phpldapadmin/php-common_35ubuntu6_all.deb
+- phpldapadmin/php-ldap_7.0+35ubuntu6_all.deb
+- phpldapadmin/php-xml_7.0+35ubuntu6_all.deb
+- phpldapadmin/php7.0-cli_7.0.30-0ubuntu0.16.04.1_amd64.deb
+- phpldapadmin/php7.0-common_7.0.30-0ubuntu0.16.04.1_amd64.deb
+- phpldapadmin/php7.0-json_7.0.30-0ubuntu0.16.04.1_amd64.deb
+- phpldapadmin/php7.0-ldap_7.0.30-0ubuntu0.16.04.1_amd64.deb
+- phpldapadmin/php7.0-opcache_7.0.30-0ubuntu0.16.04.1_amd64.deb
+- phpldapadmin/php7.0-readline_7.0.30-0ubuntu0.16.04.1_amd64.deb
+- phpldapadmin/php7.0-xml_7.0.30-0ubuntu0.16.04.1_amd64.deb
+- phpldapadmin/phpldapadmin_1.2.2-5.2ubuntu2.1_all.deb
+- phpldapadmin/ssl-cert_1.0.37_all.deb
+

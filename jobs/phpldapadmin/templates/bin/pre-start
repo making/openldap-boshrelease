@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+dpkg -i /var/vcap/packages/phpldapadmin/*.deb
+
+sed -i 's/:80/:<%= p("port") %>/g' /etc/apache2/sites-enabled/000-default.conf
+sed -i 's/Listen 80/Listen <%= p("port") %>/g' /etc/apache2/ports.conf
+
+cp /var/vcap/jobs/phpldapadmin/config/config.php /etc/phpldapadmin/config.php
+
+/etc/init.d/apache2 restart

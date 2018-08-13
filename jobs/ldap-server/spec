@@ -15,6 +15,13 @@ templates:
 provides:
 - name: ldap-server
   type: ldap-server
+  properties:
+  - ldap.configDatabasePW
+  - ldap.olcSuffix
+  - ldap.olcRootDN
+  - ldap.olcRootPW
+  - ldap.ssl.active
+  - ldap.ssl.ca_cert
 properties:
   ldap.reloadConfigOnRestart:
     description: "Should the config database be deleted and recreated on each deployment, this will destroy all configuration that was loaded during runtime"
