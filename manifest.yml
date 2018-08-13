@@ -1,27 +1,67 @@
 ---
 name: openldap
-
 releases:
 - name: openldap
   version: latest
+#  version: 0.6.0
+#  url: https://github.com/making/openldap-boshrelease/releases/download/0.6.0/openldap-boshrelease-0.6.0.tgz
+#  sha1: 151ce11c614d6822003504d8920d90a6b9361993
 
 stemcells:
-- os: ubuntu-trusty
-  alias: trusty
+- os: ubuntu-xenial
+  alias: xenial
   version: latest
 
 instance_groups:
 - name: ldap-server
-  templates:
+  jobs:
   - name: ldap-server
     release: openldap
+    properties:
+      ldap:
+        olcSuffix: ((ldap_olc_suffix))
+        olcRootDN: ((ldap_olc_root_dn))
+        olcRootPW: ((ldap_olc_root_pw))
+        configDatabasePW: ((ldap_config_database_pw))
+  - name: add-dn
+    release: openldap
+    properties:
+      ldap:
+        configSchemaLdif: ((ldap_config_ldif))
+        userEntriesLdif: ((ldap_user_ldif))
+  - name: modify-dn
+    release: openldap
+    properties:
+      ldap:
+        configSchemaLdif: ((ldap_config_ldif))
+        userEntriesLdif: ((ldap_user_ldif))
   instances: 1
-  stemcell: trusty
+  stemcell: xenial
   azs: [z1]
   vm_type: default
   networks:
   - name: default
+    static_ips:
+    - ((internal_ip))
   persistent_disk_type: default
+- name: phpldapadmin
+  jobs:
+  - name: phpldapadmin
+    release: openldap
+  properties:
+    port: 8080
+  instances: 1
+  stemcell: xenial
+  azs: [z1]
+  vm_type: default
+  networks:
+  - name: default
+
+variables:
+- name: ldap_olc_root_pw
+  type: password
+- name: ldap_config_database_pw
+  type: password
 
 update:
   canaries: 1
