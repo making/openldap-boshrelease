@@ -4,6 +4,7 @@ name: phpldapadmin
 templates:
   bin/pre-start: bin/pre-start
   config/config.php: config/config.php
+  config/ca.crt: config/ca.crt
 
 consumes:
 - name: ldap-server

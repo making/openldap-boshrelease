@@ -1,0 +1,1 @@
+<% if link("ldap-server").p("ldap.ssl.active") %><%= link("ldap-server").p("ldap.ssl.ca_cert", "") %><% end %>

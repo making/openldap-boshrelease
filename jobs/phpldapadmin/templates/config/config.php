@@ -293,8 +293,9 @@ $servers->setValue('server','name','My LDAP Server');
 $servers->setValue('server','host','<%= link("ldap-server").instances[0].address %>');
 
 <% if link("ldap-server").p("ldap.ssl.active") %>
+// TODO enable LDAPS?
 /* The port your LDAP server listens on (no quotes). 389 is standard. */
-$servers->setValue('server','port',389);
+// $servers->setValue('server','port',389);
 <% end %>
 
 /* Array of base DNs of your LDAP server. Leave this blank to have phpLDAPadmin
@@ -334,7 +335,8 @@ $servers->setValue('login','bind_id','<%= link("ldap-server").p("ldap.olcRootDN"
 #  $servers->setValue('login','bind_pass','secret');
 
 /* Use TLS (Transport Layer Security) to connect to the LDAP server. */
-$servers->setValue('server','tls', <%= link("ldap-server").p("ldap.ssl.active") %>);
+// TODO enable LDAPS?
+// $servers->setValue('server','tls', <%= link("ldap-server").p("ldap.ssl.active") %>);
 
 /************************************
  *      SASL Authentication         *
