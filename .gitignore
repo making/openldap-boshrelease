@@ -19,3 +19,4 @@ tmp
 my*.yml
 .downloads
 credentials.yml
+creds.yml
