@@ -31,6 +31,9 @@ jobs:
     config:
       <<: *DOWNLOAD_BLOBS
   - task: bosh-create-release
+    params:
+      S3_ACCESS_KEY_ID: ((s3-access-key-id))
+      S3_SECRET_ACCESS_KEY: ((s3-secret-access-key))
     config:
       <<: *BOSH_CREATE_RELEASE
   - task: bosh-deploy
@@ -49,6 +52,9 @@ jobs:
     config:
       <<: *DOWNLOAD_BLOBS
   - task: bosh-create-release
+    params:
+      S3_ACCESS_KEY_ID: ((s3-access-key-id))
+      S3_SECRET_ACCESS_KEY: ((s3-secret-access-key))
     config:
       <<: *BOSH_CREATE_RELEASE
   - task: bosh-deploy
@@ -74,12 +80,14 @@ jobs:
       <<: *BOSH
       GIT_EMAIL: {{git-email}}
       GIT_NAME: {{git-name}}
+      S3_ACCESS_KEY_ID: ((s3-access-key-id))
+      S3_SECRET_ACCESS_KEY: ((s3-secret-access-key))
     config:
       platform: linux
       image_resource:
         type: docker-image
         source:
-          repository: bosh/main-bosh-docker
+          repository: starkandwayne/concourse
       inputs:
       - name: repo
       - name: repo-version
@@ -102,7 +110,15 @@ jobs:
           TARBALL=openldap-boshrelease-${VERSION}.tgz
           
           ln -s ../compiled ./.downloads
-          ./add-blobs.sh
+          # ./add-blobs.sh
+
+          cat <<EOF > config/private.yml
+          ---
+          blobstore:
+            options:
+              access_key_id: ${S3_ACCESS_KEY_ID}
+              secret_access_key: ${S3_SECRET_ACCESS_KEY}
+          EOF
 
           bosh create-release --force --version=${VERSION} --final --tarball=../releases/${TARBALL}
           
@@ -192,7 +208,7 @@ tasks:
     image_resource:
       type: docker-image
       source:
-        repository: bosh/main-bosh-docker
+        repository: starkandwayne/concourse
     inputs:
     - name: repo
     outputs:
@@ -231,7 +247,7 @@ tasks:
         cd repo
         
         ln -s ../compiled ./.downloads
-        ./add-blobs.sh
+        # ./add-blobs.sh
         rm -rf .final_builds releases
         bosh create-release --name=openldap-dev --force --timestamp-version --tarball=../releases/openldap-boshrelease.tgz
   bosh-deploy: &BOSH_DEPLOY
