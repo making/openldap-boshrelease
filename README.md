@@ -1,7 +1,5 @@
 
 ```
-wget https://github.com/crdant/cf-mgmt-demo/raw/master/data/apache-ds-tutorial.ldif
-
 bosh create-release --name=openldap --force --timestamp-version --tarball=/tmp/openldap-boshrelease.tgz &&\
 bosh upload-release /tmp/openldap-boshrelease.tgz &&\
 bosh -d openldap deploy manifest.yml \
