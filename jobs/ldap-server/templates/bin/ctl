@@ -11,6 +11,7 @@ export LANG=en_US.UTF-8
 
 export OPENLDAP=/var/vcap/packages/openldap
 export PATH=${OPENLDAP}/libexec:${OPENLDAP}/sbin:$PATH
+export LIBTOOL_PATH=/var/vcap/packages/libtool
 
 case $1 in
 
@@ -39,7 +40,7 @@ case $1 in
       mkdir -p $conf_db
       chown vcap:vcap $conf_db
       echo "Creating config database from $conf_file"
-      sudo slapadd -F $conf_db -n 0 -l $conf_file
+      sudo -E LD_LIBRARY_PATH="${LIBTOOL_PATH}/lib" slapadd -F $conf_db -n 0 -l $conf_file
     fi
 
     if [ -n "$SSL_ACTIVE" ]
@@ -49,7 +50,7 @@ case $1 in
       protocols="ldap:///"
     fi
 
-    sudo slapd -h "$protocols" -d stats,acl -F $conf_db >>$LOG_DIR/$JOB_NAME.log 2>&1
+    sudo -E LD_LIBRARY_PATH="${LIBTOOL_PATH}/lib" slapd -h "$protocols" -d stats,acl -F $conf_db >>$LOG_DIR/$JOB_NAME.log 2>&1
 
     ;;
 

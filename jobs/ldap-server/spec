@@ -2,6 +2,7 @@
 name: ldap-server
 packages:
 - openldap
+- libtool
 templates:
   bin/ctl: bin/ctl
   bin/monit_debugger: bin/monit_debugger

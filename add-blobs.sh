@@ -19,6 +19,10 @@ if [ ! -f ${DIR}/blobs/openldap/openldap-2.4.46.tgz ];then
     bosh add-blob --dir=${DIR} openldap-2.4.46.tgz openldap/openldap-2.4.46.tgz
 fi
 
+if [ ! -f ${DIR}/blobs/libtool/libtool-2.4.6.tar.gz ];then
+    curl -L -O -J http://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.gz
+    bosh add-blob --dir=${DIR} libtool-2.4.6.tar.gz libtool/libtool-2.4.6.tar.gz
+fi
 
 DEBS="$DEBS http://kr.archive.ubuntu.com/ubuntu/pool/main/a/apr/libapr1_1.5.2-3_amd64.deb"
 DEBS="$DEBS http://kr.archive.ubuntu.com/ubuntu/pool/main/a/apr-util/libaprutil1_1.5.4-1build1_amd64.deb"

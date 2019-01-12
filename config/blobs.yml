@@ -2,6 +2,10 @@ berkeleydb/db-5.3.28.tar.gz:
   size: 35090431
   object_id: 5d9fd626-ed5d-499c-7b30-6db84d81461c
   sha: fa3f8a41ad5101f43d08bc0efb6241c9b6fc1ae9
+libtool/libtool-2.4.6.tar.gz:
+  size: 1806697
+  object_id: 84a3e5dc-808f-4de0-773f-d871da72aeeb
+  sha: 25b6931265230a06f0fc2146df64c04e5ae6ec33
 openldap/openldap-2.4.46.tgz:
   size: 5700204
   object_id: 594a24b1-03d5-457d-60dd-b11ed5ae2269

@@ -8,13 +8,23 @@ CPUS=$(grep -c ^processor /proc/cpuinfo)
 # $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
 export HOME=/var/vcap
 export BDB_PATH=/var/vcap/packages/berkeleydb
+export LIBTOOL_PATH=/var/vcap/packages/libtool
 
 cd $BOSH_COMPILE_TARGET
 tar -xzvf openldap/openldap-2.4.46.tgz
 cd openldap-2.4.46
 
-export CPPFLAGS="-I ${BDB_PATH}/include"
-export LD_LIBRARY_PATH="${BDB_PATH}/lib"
-./configure --prefix=${BOSH_INSTALL_TARGET}
+export CPPFLAGS="-I${BDB_PATH}/include -I${LIBTOOL_PATH}/include"
+export LDFLAGS="-L${LIBTOOL_PATH}/lib"
+export LD_LIBRARY_PATH="${BDB_PATH}/lib:${LIBTOOL_PATH}/lib"
+./configure --prefix=${BOSH_INSTALL_TARGET} \
+            --enable-modules
 
 make depend && make && make install
+
+(cd contrib/slapd-modules/passwd/sha2 && \
+ make prefix=${BOSH_INSTALL_TARGET} && \
+ make prefix=${BOSH_INSTALL_TARGET} install)
+(cd contrib/slapd-modules/passwd/pbkdf2 && \
+ make && \
+ make install)

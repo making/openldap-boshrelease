@@ -1,5 +1,7 @@
 ---
 name: openldap
-dependencies: [berkeleydb]
+dependencies: 
+- berkeleydb
+- libtool
 files:
 - openldap/openldap-2.4.46.tgz
