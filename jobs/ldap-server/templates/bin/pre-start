@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+export PATH=${PATH}:/var/vcap/packages/openldap/sbin
+export LD_LIBRARY_PATH=/var/vcap/packages/libtool/lib/
+
+export CONFIG_DATABASE_PW=`slappasswd -h '{PBKDF2-SHA512}' -o module-load=pw-pbkdf2 -s <%= p('ldap.configDatabasePW') %>`
+export OLC_ROOT_PW=`slappasswd -h '{PBKDF2-SHA512}' -o module-load=pw-pbkdf2 -s <%= p('ldap.olcRootPW') %>`
+export CONFIG_DIR=/var/vcap/jobs/ldap-server/config
+
+sed \
+  -e "s|CONFIG_DATABASE_PW|${CONFIG_DATABASE_PW}|g" \
+  -e "s|OLC_ROOT_PW|${OLC_ROOT_PW}|g" \
+  ${CONFIG_DIR}/slapd.ldif.tmpl > ${CONFIG_DIR}/slapd.ldif
