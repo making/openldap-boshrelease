@@ -4,4 +4,4 @@ dependencies:
 - berkeleydb
 - libtool
 files:
-- openldap/openldap-2.4.46.tgz
+- openldap/openldap-2.4.47.tgz

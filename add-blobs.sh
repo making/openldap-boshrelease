@@ -14,9 +14,9 @@ if [ ! -f ${DIR}/blobs/berkeleydb/db-5.3.28.tar.gz ];then
     bosh add-blob --dir=${DIR} db-5.3.28.tar.gz berkeleydb/db-5.3.28.tar.gz
 fi
 
-if [ ! -f ${DIR}/blobs/openldap/openldap-2.4.46.tgz ];then
-    curl -L -O -J ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-2.4.46.tgz
-    bosh add-blob --dir=${DIR} openldap-2.4.46.tgz openldap/openldap-2.4.46.tgz
+if [ ! -f ${DIR}/blobs/openldap/openldap-2.4.47.tgz ];then
+    curl -L -O -J ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-2.4.47.tgz
+    bosh add-blob --dir=${DIR} openldap-2.4.47.tgz openldap/openldap-2.4.47.tgz
 fi
 
 if [ ! -f ${DIR}/blobs/libtool/libtool-2.4.6.tar.gz ];then

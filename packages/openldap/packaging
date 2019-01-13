@@ -11,8 +11,8 @@ export BDB_PATH=/var/vcap/packages/berkeleydb
 export LIBTOOL_PATH=/var/vcap/packages/libtool
 
 cd $BOSH_COMPILE_TARGET
-tar -xzvf openldap/openldap-2.4.46.tgz
-cd openldap-2.4.46
+tar -xzvf openldap/openldap-2.4.47.tgz
+cd openldap-2.4.47
 
 export CPPFLAGS="-I${BDB_PATH}/include -I${LIBTOOL_PATH}/include"
 export LDFLAGS="-L${LIBTOOL_PATH}/lib"
