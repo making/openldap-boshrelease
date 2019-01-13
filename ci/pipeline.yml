@@ -224,8 +224,8 @@ tasks:
         set -e
         cd repo
 
-        ./add-blobs.sh
-        cp -ra blobs/* ../compiled/
+        # ./add-blobs.sh
+        # cp -ra blobs/* ../compiled/
         find ../compiled  
   bosh-create-release: &BOSH_CREATE_RELEASE
     platform: linux
@@ -278,6 +278,11 @@ tasks:
         cat <<EOF > ops.yml
         EOF
         sed -i "s/${RELEASE_NAME}/${RELEASE_NAME}-dev/" manifest.yml
-        bosh -n deploy -d ${RELEASE_NAME}-dev <(bosh int manifest.yml -o ops.yml)
+        bosh -n deploy -d ${RELEASE_NAME}-dev <(bosh int manifest.yml -o ops.yml) \
+          -v ldap_olc_suffix=dc=pivotal,dc=org \
+          -v ldap_olc_root_dn=cn=admin,dc=pivotal,dc=org \
+          --var-file ldap_config_ldif=<(echo "") \
+          --var-file ldap_user_ldif=./example/apache-ds-tutorial.ldif \
+          -v internal_ip=10.244.2.67 --no-redact
         bosh vms -d ${RELEASE_NAME}-dev
         bosh -n delete-deployment -d ${RELEASE_NAME}-dev
