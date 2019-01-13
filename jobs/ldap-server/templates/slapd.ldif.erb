@@ -59,6 +59,8 @@ dn: olcDatabase=frontend,cn=config
 objectClass: olcDatabaseConfig
 objectClass: olcFrontendConfig
 olcDatabase: frontend
+olcPasswordHash: <%= p('ldap.olcPasswordHash') %>
+
 #
 # Sample global access control policy:
 #	Root DSE: allow anyone to read it

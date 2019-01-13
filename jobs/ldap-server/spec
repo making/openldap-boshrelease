@@ -39,6 +39,9 @@ properties:
   ldap.olcRootPW:
     description: "The root password of the database"
     default: secret
+  ldap.olcPasswordHash: 
+    description: "The hash algorithm used in LDAP Password Modify Extended Operation (RFC3062)"
+    default: "{PBKDF2-SHA512}"
   ldap.ssl.active:
     description: "Configure SSL for slapd"
     default: false
