@@ -18,7 +18,9 @@ export CPPFLAGS="-I${BDB_PATH}/include -I${LIBTOOL_PATH}/include"
 export LDFLAGS="-L${LIBTOOL_PATH}/lib"
 export LD_LIBRARY_PATH="${BDB_PATH}/lib:${LIBTOOL_PATH}/lib"
 ./configure --prefix=${BOSH_INSTALL_TARGET} \
-            --enable-modules
+            --enable-modules \
+            --enable-memberof \
+            --enable-refint
 
 make depend && make && make install
 
