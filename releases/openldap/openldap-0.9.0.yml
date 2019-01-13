@@ -1,0 +1,48 @@
+name: openldap
+version: 0.9.0
+commit_hash: 090ea58
+uncommitted_changes: true
+jobs:
+- name: add-dn
+  version: e563e6a72026d98ee33f68c2c66dec4efaa0ed2d
+  fingerprint: e563e6a72026d98ee33f68c2c66dec4efaa0ed2d
+  sha1: 73df0530685216a19b3b092083e299ec594669b8
+- name: ldap-server
+  version: 147a4786e50b29522a19725a9eafb18f1d5d0eec
+  fingerprint: 147a4786e50b29522a19725a9eafb18f1d5d0eec
+  sha1: 19785974f19c7e169ef711ff3ebedc362ee1a37a
+- name: modify-dn
+  version: 03a86eaad0a75142cc1c87cb6f9c8a50b2f6c26a
+  fingerprint: 03a86eaad0a75142cc1c87cb6f9c8a50b2f6c26a
+  sha1: 49bc820afdbfb597d51e85d5ff3b0879ab27232a
+- name: phpldapadmin
+  version: eb4d4b8c0343e89c0126b69a5fb49e0dcd204f8b
+  fingerprint: eb4d4b8c0343e89c0126b69a5fb49e0dcd204f8b
+  sha1: 07650e0bd6cdab859c98054b399105c048ca2bc4
+packages:
+- name: berkeleydb
+  version: cbd78953366de414b13776851fed78d4e23a6582
+  fingerprint: cbd78953366de414b13776851fed78d4e23a6582
+  sha1: d1ca53a2bdb9a52ba1a696e7d98b4c14b1410760
+  dependencies: []
+- name: libtool
+  version: ec0b729300642dde4d455e5e771697d60e4badd6
+  fingerprint: ec0b729300642dde4d455e5e771697d60e4badd6
+  sha1: c02488b2454362654c68ee5667122ea6cfd17fc4
+  dependencies: []
+- name: openldap
+  version: a0f243105d6cf3fe4025b88c374cbca27ddf1df7
+  fingerprint: a0f243105d6cf3fe4025b88c374cbca27ddf1df7
+  sha1: 0966a3d32d205ae292ba732817a24b104c08c712
+  dependencies:
+  - berkeleydb
+  - libtool
+- name: phpldapadmin
+  version: 6e108d5be165d189f0dc4447a7faae1cb71a6258
+  fingerprint: 6e108d5be165d189f0dc4447a7faae1cb71a6258
+  sha1: 4b6b677776aaa7542870ddd16c3e083e347b2c2a
+  dependencies: []
+license:
+  version: a15d2462e28d34ba5c0cf2d7f9b566ce05b532ea
+  fingerprint: a15d2462e28d34ba5c0cf2d7f9b566ce05b532ea
+  sha1: facf63a813004f909ef8a9c6e4bced78810865a0
