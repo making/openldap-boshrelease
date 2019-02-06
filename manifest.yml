@@ -49,18 +49,6 @@ instance_groups:
     static_ips:
     - ((internal_ip))
   persistent_disk_type: default
-- name: phpldapadmin
-  jobs:
-  - name: phpldapadmin
-    release: openldap
-  properties:
-    port: 8080
-  instances: 1
-  stemcell: xenial
-  azs: [z1]
-  vm_type: default
-  networks:
-  - name: default
 
 variables:
 - name: ldap_olc_root_pw
